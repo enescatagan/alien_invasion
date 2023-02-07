@@ -32,6 +32,13 @@ class AlienInvation:
             self.bullets.update()
             self._update_screen()
 
+            # Get rid of bullets that have dsappeared
+            for bullet in self.bullets.copy():
+                if bullet.rect.bottom <= 0:
+                    self.bullets.remove(bullet)
+            # Verify bullets are been deleted. In Terminal
+            print(len(self.bullets))
+
     def _check_events(self):
         """Respond to keypresses and mouse events"""
         # Event Loop
