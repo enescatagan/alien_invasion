@@ -34,7 +34,7 @@ class AlienInvation:
             # When player clicks window's close button
             if event.type == pygame.QUIT:
                 sys.exit()
-            
+
             # Check KEYDOWN Events
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RIGHT:
