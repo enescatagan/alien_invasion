@@ -142,6 +142,9 @@ class AlienInvation:
             self.bullets.empty()
             self._create_fleet()
 
+            # Increase speed for new fleet
+            self.settings.increase_speed()
+
     def _update_aliens(self):
         """
         Check if the fleet is at an edge,
