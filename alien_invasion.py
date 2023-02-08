@@ -84,6 +84,7 @@ class AlienInvation:
             # Reset the game statistics.
             self.stats.reset_stats()
             self.stats.game_active = True
+            self.sb.prep_score()
 
             # Get rid of any remaining aliens and bullets.
             self.aliens.empty()
@@ -141,6 +142,11 @@ class AlienInvation:
         # Remove any bullets and aliens that have collided.
         collisions = pygame.sprite.groupcollide(
             self.bullets, self.aliens, True, True)
+
+        if collisions:
+            # Update alien score each time an alien shot down
+            self.stats.score += self.settings.alien_points
+            self.sb.prep_score()
 
         # Check any alien left
         if not self.aliens:
