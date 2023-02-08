@@ -144,8 +144,9 @@ class AlienInvation:
             self.bullets, self.aliens, True, True)
 
         if collisions:
-            # Update alien score each time an alien shot down
-            self.stats.score += self.settings.alien_points
+            for aliens in collisions.values():
+                # Update alien score each time an alien shot down
+                self.stats.score += self.settings.alien_points * len(aliens)
             self.sb.prep_score()
 
         # Check any alien left
