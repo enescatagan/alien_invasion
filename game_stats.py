@@ -18,3 +18,4 @@ class GameStats:
 
         # Reset score each time new game start
         self.score = 0
+        self.level = 1
